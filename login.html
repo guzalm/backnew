@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 3em;
+        text-align: center;
+        color: #050505;
+      }
+      form {
+        text-align: center;
+      }
+      label {
+        margin: 0.5em;
+      }
+      input {
+        padding: 0.5em 1em;
+        border: 2px solid #0a0a0a;
+        border-radius: 5px;
+        font-size: 1em;
+        transition: all 0.3s;
+      }
+      input:hover {
+        border: 2px solid #060606;
+      }
+      button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        border: 2px solid #020202;
+        border-radius: 5px;
+        background-color: #070707;
+        color: #fff;
+        font-size: 1em;
+        transition: all 0.3s;
+      }
+      button:hover {
+        background-color: black;
+        border: 2px solid black;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <label for="registration"><h1>REGISTRATION:</h1></label> <br />
+      <label for="username">Login:</label>
+      <input type="text" id="username" name="username" required />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <br />
+      <button type="submit">register</button>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#registrationForm").submit(function (event) {
+          event.preventDefault();
+
+          const username = $("#username").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            url: "http://localhost:1337/register",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+              username,
+              password,
+            }),
+            success: function (data) {
+              console.log(data);
+              alert("Регистрация успешна!");
+
+              // Перенаправляем на страницу профиля
+              window.location.href = "profile.html";
+            },
+            error: function (error) {
+              console.error("Error registering user:", error);
+              alert("Ошибка регистрации.");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
