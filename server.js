@@ -10,10 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://guzalmazitova:rayana2015@cluster0.ynanytb.mongodb.net/mortex?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb://localhost:27017/mortex");
 
 app.post("/register", async (req, res) => {
   try {
@@ -30,7 +27,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 3001;
 
 const server = app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
