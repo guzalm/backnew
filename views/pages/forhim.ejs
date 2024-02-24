@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FOR HIM</title>
+  <%- include('./partials/header.ejs') %>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i>guzz</i></a>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <img src="images/man.icon.png" alt="man" width="1250" height="250px" />
+
+  <div class="container mt-3">
+    <div class="dropdown">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
+        Show filters
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item filter-item" data-category="all">All</a>
+        </li>
+        <li>
+          <a class="dropdown-item filter-item" data-category="accessories">Accessories</a>
+        </li>
+        <li>
+          <a class="dropdown-item filter-item" data-category="bags">Bags</a>
+        </li>
+        <li>
+          <a class="dropdown-item filter-item" data-category="belts">Belts</a>
+        </li>
+        <li>
+          <a class="dropdown-item filter-item" data-category="jackets">Jackets</a>
+        </li>
+        <li>
+          <a class="dropdown-item filter-item" data-category="shoes">Shoes</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="productSection">
+    <div class="container d-flex flex-nowrap">
+      <div class="card">
+        <img src="images/product5.jpg" class="card-img-top" alt="Product 1" height="300px" width="50px" />
+        <div class="card-body">
+          <h5 class="card-title">Black trainers</h5>
+          <h6 class="card-text">For man. New collection</h6>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/product2.jpg" class="card-img-top" alt="Product 2" height="300px" width="30px" />
+        <div class="card-body">
+          <h5 class="card-title">
+            Belt<span class="badge bg-secondary">New</span>
+          </h5>
+          <h6 class="card-text">For man. New collection</h6>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+      <!-- добавьте другие карточки в этом формате -->
+    </div>
+  </section>
+
+  <button class="accordion">Contact us</button>
+  <div class="panel">
+    <p>
+      To contact call, write to web-sites, or leave your e-mail (we will
+      contact)
+    </p>
+  </div>
+
+  <button class="accordion">Size guide</button>
+  <div class="panel">
+    <p>Table of sizes: xs, s, m, l, xl, xxl</p>
+  </div>
+
+  <button class="accordion">Payment</button>
+  <div class="panel">
+    <p>We accept cash and card</p>
+  </div>
+
+  <script src="forhim.js"></script>
+</body>
+
+</html>
