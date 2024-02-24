@@ -17,6 +17,7 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
+    "build": "npm install",
     "start": "node server.js"
   },
   "name": "guzz",
