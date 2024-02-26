@@ -226,10 +226,12 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/add-to-cart", async (req, res) => {
   try {
     const { email, productName, quantity } = req.body;
+
     // Fetch product details (e.g., price) from your database
+    const product = await fetchProductDetails(productName);
 
     // Calculate total price
-    const totalPrice = calculateTotalPrice(productPrice, quantity);
+    const totalPrice = calculateTotalPrice(product.price, quantity);
 
     // Save the order to the database
     const order = new Order({
@@ -246,41 +248,20 @@ app.post("/api/add-to-cart", async (req, res) => {
     res.json({ status: "error", error: "Something went wrong" });
   }
 });
-app.get("/basket", async (req, res) => {
-  const { userLoggedIn, email } = req.session;
 
-  if (userLoggedIn) {
-    try {
-      // Fetch user details from the database
-      const user = await User.findOne({ email }).lean();
-
-      // Fetch order history from the database
-      const order = await Order.find({ userEmail: email }).sort({
-        timestamp: -1,
-      });
-
-      res.render(createPath("basket"), {
-        userLoggedIn,
-        user,
-        order,
-        currentUrl: req.url,
-      });
-    } catch (err) {
-      console.error(err);
-      res.status(500).send("Internal Server Error");
-    }
-  } else {
-    res.render(createPath("index"), {
-      userLoggedIn,
-      currentUrl: req.url,
-    });
-  }
-});
+async function fetchProductDetails(productName) {
+  // Implement logic to fetch product details from the database based on the product name
+  // Return an object containing the product details, including the price
+  return { price: 49.99 }; // Replace with actual logic to fetch product details
+}
 
 function calculateTotalPrice(productPrice, quantity) {
   // Add your logic to calculate the total price
   return productPrice * quantity;
 }
+
+
+
 
 // Обработчик ошибки 404 (Страница не найдена)
 app.use((req, res, next) => {
