@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basket</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>basket</title>
-  
-  <%- include('./partials/header.ejs') %>
-  
-</head>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<body>
-  <h1>My basket</h1>
-</body>
+    <!-- Include the script for the basket -->
+    <script
+      defer src="https://lk.easynetshop.ru/frontend/v5/ens-7befbb6e.js"
+    ></script>
 
+    <!-- Include styles for the basket -->
+    <link
+      href="https://lk.easynetshop.ru/frontend/v5/ens-7befbb6e.css" rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2>Order History</h2>
+<ul>
+  <% order.forEach(order => { %>
+    <li>
+      <strong><%= order.productName %></strong> - Quantity: <%= order.quantity %>, Total: $<%= order.totalPrice %>
+    </li>
+  <% }); %>
+</ul>
+  </body>
 </html>
