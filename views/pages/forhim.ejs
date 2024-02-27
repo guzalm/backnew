@@ -1,284 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>FOR HIM</title>
     <%- include('./partials/header.ejs') %>
-  </head>
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <div class="container-fluid">
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
         <a class="navbar-brand" href="/"><i>guzz</i></a>
         <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <img src="images/man.icon.png" alt="man" width="1250" height="250px" />
+<img src="images/man.icon.png" alt="man" width="1250" height="250px"/>
 
-    <div class="container mt-3">
-      <div class="dropdown">
+<div class="container mt-3">
+    <div class="dropdown">
         <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-          Show filters
+            Show filters
         </button>
         <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item filter-item" data-category="all">All</a>
-          </li>
-          <li>
-            <a class="dropdown-item filter-item" data-category="accessories">Accessories</a>
-          </li>
-          <li>
-            <a class="dropdown-item filter-item" data-category="bags">Bags</a>
-          </li>
-          <li>
-            <a class="dropdown-item filter-item" data-category="belts">Belts</a>
-          </li>
-          <li>
-            <a class="dropdown-item filter-item" data-category="jackets">Jackets</a>
-          </li>
-          <li>
-            <a class="dropdown-item filter-item" data-category="shoes">Shoes</a>
-          </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="all">All</a>
+            </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="accessories">Accessories</a>
+            </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="bags">Bags</a>
+            </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="belts">Belts</a>
+            </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="jackets">Jackets</a>
+            </li>
+            <li>
+                <a class="dropdown-item filter-item" data-category="shoes">Shoes</a>
+            </li>
         </ul>
-      </div>
     </div>
+</div>
 
-    
-    <section id="productSection">
-      <div class="container d-flex flex-nowrap">
-        <div
-          class="card visible"
-          data-category="shoes"
-          data-product="Black trainers"
-          data-price="49.99"
-        >
-          <img
-            src="images/product5.jpg"
-            class="card-img-top"
-            alt="Product 1"
-            height="300px"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Black trainers</h5>
-            <h6 class="card-text">For man. New collection</h6>
-            <a
-              href="#"
-              class="btn btn-primary buy-now-btn"
-              data-product="Black trainers"
-              >Buy Now</a
-            >
-          </div>
-        </div>
 
+<section id="productSection">
+    <div class="container d-flex flex-nowrap">
         <div
-          class="card visible"
-          data-category="belts"
-          data-product="Belt"
-          data-price="59.99"
+                class="card visible"
+                data-category="shoes"
+                data-product="Black trainers"
+                data-price="49.99"
         >
-          <img
-            src="images/product2.jpg"
-            class="card-img-top"
-            alt="Product 2"
-            height="300px"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Belt</h5>
-            <h6 class="card-text">For man. New collection</h6>
-            <a href="#" class="btn btn-primary buy-now-btn" data-product="Belt"
-              >Buy Now</a
-            >
-          </div>
-        </div>
-        <div
-          class="card visible"
-          data-category="jackets"
-          data-product="Jacket"
-          data-price="89.99"
-        >
-          <img
-            src="images/product3.jpg"
-            class="card-img-top"
-            alt="Product 3"
-            height="300px"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Jacket</h5>
-            <h6 class="card-text">For man. New collection</h6>
-            <a href="#" class="btn btn-primary">Buy Now</a>
-          </div>
+            <img
+                    src="images/product5.jpg"
+                    class="card-img-top"
+                    alt="Product 1"
+                    height="300px"
+                    width="50px"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Black trainers</h5>
+                <h6 class="card-text">For man. New collection</h6>
+                <a
+                        href="#"
+                        class="btn btn-primary buy-now-btn"
+                        data-product="Black trainers"
+                >Buy Now</a>
+            </div>
         </div>
 
         <div
-          class="card visible"
-          data-category="jackets"
-          data-product="Sweater"
-          data-price="79.99"
+                class="card visible"
+                data-category="belts"
+                data-product="Belt"
+                data-price="59.99"
         >
-          <img
-            src="images/product4.jpg"
-            class="card-img-top"
-            alt="Product 4"
-            height="300px"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Sweater</h5>
-            <h6 class="card-text">For man. New collection</h6>
-            <a
-              href="#"
-              class="btn btn-primary buy-now-btn"
-              data-product="Sweater"
-              >Buy Now</a
-            >
-          </div>
+            <img
+                    src="images/product2.jpg"
+                    class="card-img-top"
+                    alt="Product 2"
+                    height="300px"
+                    width="50px"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Belt</h5>
+                <h6 class="card-text">For man. New collection</h6>
+                <a href="#" class="btn btn-primary buy-now-btn" data-product="Belt"
+                >Buy Now</a
+                >
+            </div>
         </div>
         <div
-          class="card visible"
-          data-category="accessories"
-          data-product="Belt"
-          data-price="49.99"
+                class="card visible"
+                data-category="jackets"
+                data-product="Jacket"
+                data-price="89.99"
         >
-          <img
-            src="images/product2.jpg"
-            class="card-img-top"
-            alt="Product 5"
-            height="300px"
-            width="50px"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Belt</h5>
-            <h6 class="card-text">For man. New collection</h6>
-            <a href="#" class="btn btn-primary buy-now-btn" data-product="Belt"
-              >Buy Now</a
-            >
-          </div>
+            <img
+                    src="images/product3.jpg"
+                    class="card-img-top"
+                    alt="Product 3"
+                    height="300px"
+                    width="50px"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Jacket</h5>
+                <h6 class="card-text">For man. New collection</h6>
+                <a href="#" class="btn btn-primary buy-now-btn" data-product="Jacket">Buy Now</a>
+            </div>
+        </div>
+
+        <div
+                class="card visible"
+                data-category="jackets"
+                data-product="Sweater"
+                data-price="79.99"
+        >
+            <img
+                    src="images/product4.jpg"
+                    class="card-img-top"
+                    alt="Product 4"
+                    height="300px"
+                    width="50px"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Sweater</h5>
+                <h6 class="card-text">For man. New collection</h6>
+                <a
+                        href="#"
+                        class="btn btn-primary buy-now-btn"
+                        data-product="Sweater"
+                >Buy Now</a
+                >
+            </div>
+        </div>
+        <div
+                class="card visible"
+                data-category="accessories"
+                data-product="Belt"
+                data-price="49.99"
+        >
+            <img
+                    src="images/product2.jpg"
+                    class="card-img-top"
+                    alt="Product 5"
+                    height="300px"
+                    width="50px"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Belt</h5>
+                <h6 class="card-text">For man. New collection</h6>
+                <a href="#" class="btn btn-primary buy-now-btn" data-product="Belt"
+                >Buy Now</a
+                >
+            </div>
         </div>
 
         <!-- добавьте другие карточки в этом формате -->
-      </div>
-    </section>
-    <!-- <a id="cart" class="menu__cart">
-      <div class="menu__cart--child">
-          <h2>Корзина</h2>
-          <div class="pl-5">
-              <span class="total__price">0</span> <span>KZT</span>
-          </div>
-      </div>
-  </a> -->
-
-  </div>
-  <!-- <div id="drawer" class="drawer">
-      <a id="closeDrawer"><i class="fa-solid fa-xmark fa-2x"></i></a>
-      <div class="drawer__container">
-          <div class="drawer__orders">
-              <h2 class="text-bold">Ваш Заказ</h2>
-          </div>
-          <div class="drawer__before--container">
-              <div class="drawer__button">
-
-                  <a class="drawer__button--buy">Перейти к Оплате <span><span class="total__price2">0</span> <span>KZT</span></span></a>
-              </div>
-          </div>
-      </div> -->
-
-    <div class="grid-container">
-      <div class="grid-item">Contact us</div>
-      <div class="grid-item">Size duide</div>
-      <div class="grid-item">Payment</div>
-      <div class="grid-item">Cookie Policy</div>
     </div>
-    <div class="container mt-3">
-      <h2>Shopping Cart</h2>
-      <ul id="cart-list"></ul>
-      <p>Total: $<span id="cart-total">0.00</span></p>
-    </div>
+</section>
 
-    <script src="forhim.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-  const buyNowButtons = document.querySelectorAll(".buy-now-btn");
-  const cartList = document.getElementById("cart-list");
-  const cartTotal = document.getElementById("cart-total");
 
-  buyNowButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
+</div>
+<!-- <div id="drawer" class="drawer">
+    <a id="closeDrawer"><i class="fa-solid fa-xmark fa-2x"></i></a>
+    <div class="drawer__container">
+        <div class="drawer__orders">
+            <h2 class="text-bold">Ваш Заказ</h2>
+        </div>
+        <div class="drawer__before--container">
+            <div class="drawer__button">
 
-      const productName = this.getAttribute("data-product");
-      const productPrice = parseFloat(this.closest(".card").getAttribute("data-price"));
+                <a class="drawer__button--buy">Перейти к Оплате <span><span class="total__price2">0</span> <span>KZT</span></span></a>
+            </div>
+        </div>
+    </div> -->
 
-      // Create a new list item for the cart
-      const cartItem = document.createElement("li");
-      cartItem.innerHTML = `${productName} - $${productPrice.toFixed(2)}`;
+<div class="grid-container">
+    <div class="grid-item">Contact us</div>
+    <div class="grid-item">Size duide</div>
+    <div class="grid-item">Payment</div>
+    <div class="grid-item">Cookie Policy</div>
+</div>
+<div class="container mt-3">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-list"></ul>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+</div>
 
-      // Append the new item to the cart list
-      cartList.appendChild(cartItem);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buyNowButtons = document.querySelectorAll(".buy-now-btn");
+        const cartList = document.getElementById("cart-list");
+        const cartTotal = document.getElementById("cart-total");
 
-      // Update the total price
-      const currentTotal = parseFloat(cartTotal.innerText);
-      cartTotal.innerText = (currentTotal + productPrice).toFixed(2);
+        buyNowButtons.forEach((button) => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
 
-      // Optionally, you can redirect to the basket page after adding the product
-      // window.location.href = "/basket";
-    });
-  });
-});
+                const productName = this.getAttribute("data-product");
+                const productPrice = parseFloat(this.closest(".card").getAttribute("data-price"));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const buyNowButtons = document.querySelectorAll(".buy-now-btn");
-  const cartTotal2 = document.querySelector(".total__price2");
+                const cartItem = document.createElement("li");
+                cartItem.innerHTML = `${productName} - $${productPrice.toFixed(2)}`;
 
-  buyNowButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
+                cartList.appendChild(cartItem);
 
-      const productName = this.getAttribute("data-product");
-      const productPrice = parseFloat(this.closest(".card").getAttribute("data-price"));
+                const currentTotal = parseFloat(cartTotal.innerText);
+                cartTotal.innerText = (currentTotal + productPrice).toFixed(2);
 
-      // Update the total price for the drawer
-      const currentTotal = parseFloat(cartTotal2.innerText);
-      cartTotal2.innerText = (currentTotal + productPrice).toFixed(2);
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-      const filterItems = document.querySelectorAll(".filter-item");
-      const productCards = document.querySelectorAll(".card");
-
-      filterItems.forEach((item) => {
-        item.addEventListener("click", function () {
-          const selectedCategory = this.getAttribute("data-category");
-
-          // Hide all cards
-          productCards.forEach((card) => {
-            card.classList.add("hidden");
-          });
-
-          // Show only cards with the selected category
-          if (selectedCategory === "all") {
-            productCards.forEach((card) => {
-              card.classList.remove("hidden");
+                fetch("/api/add-to-cart", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        productName: productName,
+                        quantity: 1,
+                    }),
+                })
+                    .then(response => {
+                        if(response.ok) {
+                            return response.json();
+                        } else {
+                            window.location.href = "/";
+                            return response.json();
+                        }
+                    })
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
             });
-          } else {
-            const selectedCards = document.querySelectorAll(`.card[data-category="${selectedCategory}"]`);
-            selectedCards.forEach((card) => {
-              card.classList.remove("hidden");
-            });
-          }
         });
-      });
-
-      // ... (your existing code) ...
     });
-    </script>
-  </body>
+</script>
+</body>
 </html>
