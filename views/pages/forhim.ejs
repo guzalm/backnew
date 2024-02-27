@@ -21,11 +21,7 @@
 
     <div class="container mt-3">
       <div class="dropdown">
-        <button
-          type="button"
-          class="btn btn-dark dropdown-toggle"
-          data-bs-toggle="dropdown"
-        >
+        <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
           Show filters
         </button>
         <ul class="dropdown-menu">
@@ -33,9 +29,7 @@
             <a class="dropdown-item filter-item" data-category="all">All</a>
           </li>
           <li>
-            <a class="dropdown-item filter-item" data-category="accessories"
-              >Accessories</a
-            >
+            <a class="dropdown-item filter-item" data-category="accessories">Accessories</a>
           </li>
           <li>
             <a class="dropdown-item filter-item" data-category="bags">Bags</a>
@@ -44,9 +38,7 @@
             <a class="dropdown-item filter-item" data-category="belts">Belts</a>
           </li>
           <li>
-            <a class="dropdown-item filter-item" data-category="jackets"
-              >Jackets</a
-            >
+            <a class="dropdown-item filter-item" data-category="jackets">Jackets</a>
           </li>
           <li>
             <a class="dropdown-item filter-item" data-category="shoes">Shoes</a>
@@ -55,10 +47,11 @@
       </div>
     </div>
 
+    
     <section id="productSection">
       <div class="container d-flex flex-nowrap">
         <div
-          class="card"
+          class="card visible"
           data-category="shoes"
           data-product="Black trainers"
           data-price="49.99"
@@ -83,7 +76,7 @@
         </div>
 
         <div
-          class="card"
+          class="card visible"
           data-category="belts"
           data-product="Belt"
           data-price="59.99"
@@ -104,7 +97,7 @@
           </div>
         </div>
         <div
-          class="card"
+          class="card visible"
           data-category="jackets"
           data-product="Jacket"
           data-price="89.99"
@@ -124,7 +117,7 @@
         </div>
 
         <div
-          class="card"
+          class="card visible"
           data-category="jackets"
           data-product="Sweater"
           data-price="79.99"
@@ -148,7 +141,7 @@
           </div>
         </div>
         <div
-          class="card"
+          class="card visible"
           data-category="accessories"
           data-product="Belt"
           data-price="49.99"
@@ -172,17 +165,17 @@
         <!-- добавьте другие карточки в этом формате -->
       </div>
     </section>
-    <a id="cart" class="menu__cart">
+    <!-- <a id="cart" class="menu__cart">
       <div class="menu__cart--child">
           <h2>Корзина</h2>
           <div class="pl-5">
               <span class="total__price">0</span> <span>KZT</span>
           </div>
       </div>
-  </a>
+  </a> -->
 
   </div>
-  <div id="drawer" class="drawer">
+  <!-- <div id="drawer" class="drawer">
       <a id="closeDrawer"><i class="fa-solid fa-xmark fa-2x"></i></a>
       <div class="drawer__container">
           <div class="drawer__orders">
@@ -194,25 +187,8 @@
                   <a class="drawer__button--buy">Перейти к Оплате <span><span class="total__price2">0</span> <span>KZT</span></span></a>
               </div>
           </div>
-      </d
+      </div> -->
 
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
     <div class="grid-container">
       <div class="grid-item">Contact us</div>
       <div class="grid-item">Size duide</div>
@@ -273,6 +249,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+      const filterItems = document.querySelectorAll(".filter-item");
+      const productCards = document.querySelectorAll(".card");
+
+      filterItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          const selectedCategory = this.getAttribute("data-category");
+
+          // Hide all cards
+          productCards.forEach((card) => {
+            card.classList.add("hidden");
+          });
+
+          // Show only cards with the selected category
+          if (selectedCategory === "all") {
+            productCards.forEach((card) => {
+              card.classList.remove("hidden");
+            });
+          } else {
+            const selectedCards = document.querySelectorAll(`.card[data-category="${selectedCategory}"]`);
+            selectedCards.forEach((card) => {
+              card.classList.remove("hidden");
+            });
+          }
+        });
+      });
+
+      // ... (your existing code) ...
+    });
     </script>
   </body>
 </html>
