@@ -4,28 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Basket</title>
-
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Include the script for the basket -->
-    <script
-      defer src="https://lk.easynetshop.ru/frontend/v5/ens-7befbb6e.js"
-    ></script>
-
-    <!-- Include styles for the basket -->
-    <link
-      href="https://lk.easynetshop.ru/frontend/v5/ens-7befbb6e.css" rel="stylesheet"
-    />
   </head>
   <body>
-    <h2>Order History</h2>
-<ul>
-  <% order.forEach(order => { %>
-    <li>
-      <strong><%= order.productName %></strong> - Quantity: <%= order.quantity %>, Total: $<%= order.totalPrice %>
-    </li>
-  <% }); %>
-</ul>
+    // Inside your basket.ejs or relevant frontend file
+    <div class="container mt-3">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-list">
+        <% user.shoppingCart.forEach((item) => { %>
+          <li>
+            <%= item.productName %> - Quantity: <%= item.quantity %> -
+            <% if (item.totalPrice !== undefined) { %>
+              $<%= item.totalPrice.toFixed(2) %>
+            <% } else { %>
+              Price not available
+            <% } %>
+          </li>
+        <% }); %>
+      </ul>
+      <p>Total: $<span id="cart-total"><%= calculateCartTotal(user.shoppingCart).toFixed(2) %></span></p>
+    </div>
+    <%
+
+    function calculateCartTotal(cart) {
+        // Implement your logic to calculate the total price of the shopping cart
+        return cart.reduce((total, item) => total + (item.totalPrice || 0), 0);
+    }
+
+    %>
   </body>
 </html>
