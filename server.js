@@ -235,34 +235,45 @@ app.post("/api/add-to-cart", async (req, res) => {
 
         const {productName  , quantity} = req.body;
 
-        // Fetch product details (e.g., price) from your database
         const product = await Product.findOne({name: productName});
 
         if (!product) {
             return res.json({status: "error", error: "Product not found"});
         }
-        const totalPrice = calculateTotalPrice(product.price, quantity);
+
 
         const user = await User.findOne({email});
-        const existingProductIndex = user.shoppingCart.findIndex(item => item.productName === productName);
-        if (existingProductIndex !== -1) {
-            user.shoppingCart[existingProductIndex].quantity += 1;
-        } else {
-            user.shoppingCart.push({
-                productName,
-                quantity,
-                totalPrice,
-            });
-        }
-        const order = new Order({
-            user: user._id,
-            products: [{
-                product: product._id,
-                quantity,
-            }],
-        });
-        await Promise.all([order.save(), user.save()]);
+        const existingOrder = await Order.findOne({ user: user._id});
 
+        if (existingOrder) {
+            const existingProduct = existingOrder.products.find((p) => p.product.equals(product._id));
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+                existingProduct.totalPrice = calculateTotalPrice(product.price, existingProduct.quantity);
+            } else {
+                existingOrder.products.push({
+                    product: product._id,
+                    productName: productName,
+                    quantity,
+                    totalPrice: calculateTotalPrice(product.price, quantity),
+                });
+            }
+
+            existingOrder.markModified('products');
+            await existingOrder.save();
+        } else {
+            const order = new Order({
+                user: user._id,
+                products: [{
+                    product: product._id,
+                    productName: productName,
+                    quantity,
+                    totalPrice: calculateTotalPrice(product.price, quantity)
+                }],
+            });
+
+            await order.save();
+        }
         return res.json({status: "ok"});
     } catch (error) {
         console.error("Error:", error);
@@ -271,6 +282,7 @@ app.post("/api/add-to-cart", async (req, res) => {
 });
 
 function calculateTotalPrice(productPrice, quantity) {
+    //const totalPrice = calculateTotalPrice(product.price, quantity);
     // Add your logic to calculate the total price
     return productPrice * quantity;
 }
@@ -299,7 +311,9 @@ app.get("/basket", async (req, res) => {
         }
         // Fetch the user's data with the shopping cart from the database
         const user = await User.findOne({email: email});
-        res.render(createPath("basket"), {user});
+        const existingOrder = await Order.findOne({ user: user._id});
+
+        res.render(createPath("basket"), {user, existingOrder});
 
     } catch (error) {
         console.error("Error:", error);
