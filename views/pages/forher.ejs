@@ -1,118 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FOR HER</title>
-  <%- include('./partials/header.ejs') %>
-  
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>FOR HER</title>
+    <%- include('./partials/header.ejs') %>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><i>guzz</i></a>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="navbar-brand" href="/"><i>guzz</i></a>
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
-  </nav>
-  <img src="images/woman.icon.png" alt="woman" width="1250" height="250px" />
-  <div class="container mt-3">
+</nav>
+<img src="images/woman.icon.png" alt="woman" width="1250" height="250px"/>
+<div class="container mt-3">
     <div class="dropdown">
-      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">
-        Show filters
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">accessories</a></li>
-        <li><a class="dropdown-item" href="#">bags</a></li>
-        <li><a class="dropdown-item" href="#">belts</a></li>
-        <li><a class="dropdown-item" href="#">jackets</a></li>
-        <li><a class="dropdown-item" href="#">shoes</a></li>
-      </ul>
+        <button
+                type="button"
+                class="btn btn-dark dropdown-toggle"
+                data-bs-toggle="dropdown"
+        >
+            Show filters
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">accessories</a></li>
+            <li><a class="dropdown-item" href="#">bags</a></li>
+            <li><a class="dropdown-item" href="#">belts</a></li>
+            <li><a class="dropdown-item" href="#">jackets</a></li>
+            <li><a class="dropdown-item" href="#">shoes</a></li>
+        </ul>
     </div>
-  </div>
-  <section>
+</div>
+<section>
     <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="images/womanproduct1.jpg" class="card-img-top" alt="Product 1" height="300px" width="50px" />
-            <div class="card-body">
-              <h5 class="card-title">White dress</h5>
-              <h6 class="card-text">For woman. New collection</h6>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card"
+                     data-price="49.99">
+                    <img
+                            src="images/womanproduct1.jpg"
+                            class="card-img-top"
+                            alt="Product 1"
+                            height="300px"
+                            width="50px"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">White dress</h5>
+                        <h6 class="card-text">For woman. New collection</h6>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-product="White dress">Buy Now</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <img src="images/womanproduct2.jpg" class="card-img-top" alt="Product 2" height="300px" width="30px" />
-            <div class="card-body">
-              <h5 class="card-title">
-                Shoes<span class="badge bg-secondary">New</span>
-              </h5>
-              <h6 class="card-text">For woman. New collection</h6>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+            <div class="col-md-3">
+                <div class="card" data-product="Shoes"
+                     data-price="49.99">
+                    <img
+                            src="images/womanproduct2.jpg"
+                            class="card-img-top"
+                            alt="Product 2"
+                            height="300px"
+                            width="30px"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Shoes<span class="badge bg-secondary">New</span>
+                        </h5>
+                        <h6 class="card-text">For woman. New collection</h6>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-product = "Shoes">Buy Now</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="images/womanproduct3.jpg" class="card-img-top" alt="Product 3" height="300px" width="50px" />
-            <div class="card-body">
-              <h5 class="card-title">Bag</h5>
-              <h6 class="card-text">For woman. New collection</h6>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+            <div class="col-md-3">
+                <div class="card" data-product="Bag"
+                     data-price="39.99">
+                    <img
+                            src="images/womanproduct3.jpg"
+                            class="card-img-top"
+                            alt="Product 3"
+                            height="300px"
+                            width="50px"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Bag</h5>
+                        <h6 class="card-text">For woman. New collection</h6>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-product = "Bag">Buy Now</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-3">
-          <div class="card">
-            <img src="images/womanproduct4.jpg" class="card-img-top" alt="Product 3" height="300px" width="50px" />
-            <div class="card-body">
-              <h5 class="card-title">Suit</h5>
-              <h6 class="card-text">For woman. New collection</h6>
-              <a href="#" class="btn btn-primary">Buy Now</a>
+            <div class="col-md-3">
+                <div class="card" data-product="Suit"
+                     data-price="109.99">
+                    <img
+                            src="images/womanproduct4.jpg"
+                            class="card-img-top"
+                            alt="Product 3"
+                            height="300px"
+                            width="50px"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title">Suit</h5>
+                        <h6 class="card-text">For woman. New collection</h6>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-product = "Suit">Buy Now</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-  <nav aria-label="Page navigation example">
+</section>
+<nav aria-label="Page navigation example">
     <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
     </ul>
-  </nav>
-  <div class="grid-container">
+</nav>
+<div class="grid-container">
     <div class="grid-item">Contact us</div>
     <div class="grid-item">Size duide</div>
     <div class="grid-item">Payment</div>
     <div class="grid-item">Cookie Policy</div>
-  </div>
-  <div class="container mt-3">
+</div>
+<div class="container mt-3">
     <h2>Shopping Cart</h2>
     <ul id="cart-list"></ul>
     <p>Total: $<span id="cart-total">0.00</span></p>
-  </div>
-  <!-- Create JS objects and its properties; -->
-  <script src="forher.js"></script>
-</body>
+</div>
+<!-- Create JS objects and its properties; -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buyNowButtons = document.querySelectorAll(".buy-now-btn");
+        const cartList = document.getElementById("cart-list");
+        const cartTotal = document.getElementById("cart-total");
 
+        buyNowButtons.forEach((button) => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const productName = this.getAttribute("data-product");
+                const productPrice = parseFloat(this.closest(".card").getAttribute("data-price"));
+
+                const cartItem = document.createElement("li");
+                cartItem.innerHTML = `${productName} - $${productPrice.toFixed(2)}`;
+
+                cartList.appendChild(cartItem);
+
+                const currentTotal = parseFloat(cartTotal.innerText);
+                cartTotal.innerText = (currentTotal + productPrice).toFixed(2);
+
+                fetch("/api/add-to-cart", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        productName: productName,
+                        quantity: 1,
+                    }),
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            window.location.href = "/";
+                            return response.json();
+                        }
+                    })
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+            });
+        });
+    });
+</script>
+</body>
 </html>
