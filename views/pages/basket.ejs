@@ -6,11 +6,10 @@
     <title>Basket</title>
   </head>
   <body>
-    // Inside your basket.ejs or relevant frontend file
     <div class="container mt-3">
       <h2>Shopping Cart</h2>
       <ul id="cart-list">
-        <% user.shoppingCart.forEach((item) => { %>
+        <% existingOrder.products.forEach((item) => { %>
           <li>
             <%= item.productName %> - Quantity: <%= item.quantity %> -
             <% if (item.totalPrice !== undefined) { %>
@@ -21,7 +20,7 @@
           </li>
         <% }); %>
       </ul>
-      <p>Total: $<span id="cart-total"><%= calculateCartTotal(user.shoppingCart).toFixed(2) %></span></p>
+      <p>Total: $<span id="cart-total"><%= calculateCartTotal(existingOrder.products).toFixed(2) %></span></p>
     </div>
     <%
 
